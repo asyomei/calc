@@ -1,0 +1,25 @@
+#header {
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+a {
+  color: black;
+}
+
+#title {
+  margin: 0;
+}
+
+#watermark-text {
+  margin: 0;
+  text-align: end;
+  color: grey;
+}
+
+#text-row {
+  display: grid;
+  grid-template-columns: auto auto;
+}

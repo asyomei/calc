@@ -1,0 +1,48 @@
+#conv-form {
+  font-size: 20px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#number-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  input {
+    width: 200px;
+    font-size: large;
+  }
+}
+
+#base-input-group {
+  display: flex;
+  gap: 30px;
+
+  .center {
+    text-align: center;
+  }
+
+  input {
+    font-size: large;
+    text-align: center;
+    width: 60px;
+  }
+}
+
+#output {
+  padding-top: 12px;
+  width: 500px;
+
+  &.result {
+    font-size: 24px;
+  }
+
+  &.error {
+    color: red;
+    font-size: 20px;
+  }
+}

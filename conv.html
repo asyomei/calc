@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Конвертер систем счисления</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="header"></header>
+
+      <div id="conv-form">
+        <div id="number-form">
+          <label for="number-input">Число</label>
+          <input id="number-input" type="text" />
+        </div>
+
+        <div id="base-input-group">
+          <div class="center">
+            <label for="from-base-input">Из основания</label>
+            <input id="from-base-input" type="number" min="2" max="36" value="2" />
+          </div>
+
+          <div class="center">
+            <label for="to-base-input">В основание</label>
+            <input id="to-base-input" type="number" min="2" max="36" value="10" />
+          </div>
+        </div>
+
+        <div id="output"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/conv/main.ts"></script>
+  </body>
+</html>

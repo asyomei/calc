@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header id="header"></header>
+      <div id="calc">
+        <div id="expr-container">
+          <span id="expr-input"></span>
+        </div>
+        <div id="result-container">
+          <span id="result"></span>
+        </div>
+
+        <div id="buttons">
+          <table class="button-table">
+            <tr>
+              <td>
+                <button class="math-button" data-tex="7">7</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="8">8</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="9">9</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="math-button" data-tex="4">4</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="5">5</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="6">6</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="math-button" data-tex="1">1</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="2">2</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="3">3</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="math-button" data-tex="0">0</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex=".">.</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="ans">ans</button>
+              </td>
+            </tr>
+          </table>
+
+          <table class="button-table">
+            <tr>
+              <td>
+                <button class="math-button" data-tex="\div">/</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="a^2">a^a</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="a^n">a^n</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="|a|">|a|</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="math-button" data-tex="\times">*</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="\sqrt{a}">sqrt</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="\nthroot{n}{a}">root</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="\pi">pi</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="math-button" data-tex="-">-</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="\sin">sin</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="\cos">cos</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="\tan">tan</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="math-button" data-tex="+">+</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="(">(</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex=")">)</button>
+              </td>
+              <td>
+                <button class="math-button" data-tex="?">?</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/calc/main.ts"></script>
+  </body>
+</html>
