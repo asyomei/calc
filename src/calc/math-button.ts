@@ -37,3 +37,8 @@ export const cmd =
   (cmd: string): Handler =>
   (field) =>
     field.cmd(cmd);
+
+export const key =
+  (key: string): Handler =>
+  (field) =>
+    field.keystroke(key);

@@ -2,7 +2,7 @@ import { injectHeader } from "../header/header";
 import "../global.css";
 import "./styles.css";
 import { MathQuillConfig, MathQuillLoader } from "mathquill-typescript";
-import { btn, cmd, injectMathButtons, type } from "./math-button";
+import { btn, cmd, injectMathButtons, key, type } from "./math-button";
 import evaluatex from "evaluatex/dist/evaluatex";
 
 injectHeader({
@@ -21,15 +21,27 @@ MathQuillLoader.loadMathQuill({ mode: "prod" }, (MQ) => {
 
   injectMathButtons(MQ, exprInput, [
     ...Array.from("0123456789.()+-").map((n) => btn(n, type(n))),
-    ...["\\sin", "\\cos", "\\tan", "\\pi"].map((f) => btn(f, cmd(f), type("("))),
-    btn("\\times", type("\\cdot")),
+    ...["\\sin", "\\cos", "\\tan"].map((f) => btn(f, cmd(f), type("("))),
+    btn("\\times", type("*")),
     btn("\\div", type("/")),
     btn("a^2", type("^2")),
     btn("a^n", type("^")),
+    btn("\\pi", cmd("\\pi")),
     btn("\\sqrt{a}", cmd("\\sqrt")),
     btn("\\nthroot{n}{a}", cmd("\\nthroot")),
     btn("|a|", type("|")),
     btn("ans", type("ans")),
+    btn("\\leftarrow", key("Left")),
+    btn("\\rightarrow", key("Right")),
+    btn("\\Leftarrow", key("Backspace")),
+    btn("=", () => {
+      calculate();
+      lastResult = tempResult;
+    }),
+    btn("C", (f) => {
+      lastResult = tempResult;
+      f.latex("");
+    }),
   ]);
 
   let tempResult: number = 0;
@@ -43,7 +55,7 @@ MathQuillLoader.loadMathQuill({ mode: "prod" }, (MQ) => {
   };
 
   exprInput.config({
-    autoCommands: "pi tau",
+    autoCommands: "pi tau sqrt nthroot",
     autoOperatorNames: "sin cos tan",
     handlers: {
       edit() {
